@@ -1,0 +1,174 @@
+﻿@model PaginatedList<dotNetNews.Models.dotNetNewsModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCategoryId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Picture)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+<section class="blog-posts">
+    <div class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    @foreach (var posts in Model)
+                    {
+                        <article class="post type-post format-standard">
+                            <div class="entry-thumbnail radius"><img src="@posts.GetInLineImgSource()" alt="Post Thumbnail"></div>
+                            <div class="entry-content media">
+                                <div class="content-details media-body">
+                                    <h3 class="entry-title"><a asp-action="Details" asp-route-id="@posts.Title.Replace(" ","-")">@posts.Title</a></h3>
+                                    <div class="entry-meta">
+                                        <span class="author"><i class="icon-user"></i> <a href="#">@posts.Author</a></span>
+                                        <span class="tag"><i class="icon-tag"></i> <a href="#">@posts.Category</a></span>
+                                        <span><i class="icon-clock"></i> <a href="#">@posts.DateTime.ToShortDateString()</a></span>
+                                    </div>
+                                    <p>@posts.ShortDescription</p>
+                                    <a asp-action="Details" asp-route-id="@posts.Title.Replace(" ","-")" class="btn btn-lg">Read more</a>
+                                </div>
+                            </div>
+                        </article>
+
+                    }
+
+                    <nav aria-label="Page navigation example">
+                        @{
+                            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                        }
+
+                        <a asp-action="Index"
+                           asp-route-sortOrder="@ViewData["CurrentSort"]"
+                           asp-route-pageNumber="@(Model.PageIndex - 1)"
+                           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                           class="btn btn-default @prevDisabled">
+                            Previous
+                        </a>
+                        <a asp-action="Index"
+                           asp-route-sortOrder="@ViewData["CurrentSort"]"
+                           asp-route-pageNumber="@(Model.PageIndex + 1)"
+                           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                           class="btn btn-default @nextDisabled">
+                            Next
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="col-md-4">
+                    <aside class="sidebar">
+                        <div class="widget widget_search">
+                            <div class="widget-details">
+                                <form asp-action="Index" method="get">
+                                    <div class="form-actions no-color">
+                                        <p>
+                                            Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                                            <input type="submit" value="Search" class="btn btn-default" /> |
+                                            <a asp-action="Index">Back to Full List</a>
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="widget widget_categories">
+                            <h2 class="widget-title">Categories</h2>
+                            <div class="widget-details">
+                                <ul>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Photography</a></li>
+                                    <li><a href="#">WordPress</a></li>
+                                    <li><a href="#">Learning Press</a></li>
+                                    <li><a href="#">HTML5</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="widget widget_archive">
+                            <h2 class="widget-title">Archive</h2>
+                            <div class="widget-details">
+                                <ul>
+                                    <li><a href="#">January 2018</a></li>
+                                    <li><a href="#">February 2018</a></li>
+                                    <li><a href="#">March 2018</a></li>
+                                    <li><a href="#">April 2018</a></li>
+                                    <li><a href="#">May 2018</a></li>
+                                    <li><a href="#">June 2018</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
