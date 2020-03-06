@@ -89,8 +89,6 @@ C:\Users\sethm\Desktop\dotNetNews\dotNetNews\bin\Debug\netcoreapp3.1\dotNetNews.
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\bin\Debug\netcoreapp3.1\dotNetNews.pdb
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\bin\Debug\netcoreapp3.1\dotNetNews.Views.dll
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\bin\Debug\netcoreapp3.1\dotNetNews.Views.pdb
-C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\dotNetNews.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\dotNetNews.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\dotNetNews.Views.pdb
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\dotNetNews.dll
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\dotNetNews.pdb
@@ -211,3 +209,8 @@ C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Areas
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Views\dotNetNewsModels\Tech.cshtml.g.cs
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Views\dotNetNewsModels\Science.cshtml.g.cs
+C:\Users\sethm\Desktop\dotNetNews\dotNetNews\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\sethm\Desktop\dotNetNews\dotNetNews\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\sethm\Desktop\dotNetNews\dotNetNews\bin\Debug\netcoreapp3.1\SendGrid.dll
+C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\dotNetNews.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\dotNetNews.MvcApplicationPartsAssemblyInfo.cache
