@@ -1,0 +1,214 @@
+﻿@model PaginatedList<dotNetNews.Models.dotNetNewsModel>
+@{
+    ViewData["Title"] = "Tech";
+}
+
+<div id="wrapper">
+    <div class="container sitecontainer bgw">
+        <div class="row hidden-xs">
+            <div class="col-md-12">
+                <div class="news-ticker clearfix">
+                    <div class="news-title">
+                        <h3>Trending News</h3>
+                    </div>
+                    <ul id="ticker">
+                        <li><a href="single.html" title="">ThePhone thriller will change the way film [..] - <span>March 01, 2016</span></a></li>
+                        <li><a href="single.html" title="">User details can reportedly be [..]  - <span>March 01, 2016</span></a></li>
+                        <li><a href="single.html" title="">Outstanding Office Design and Workspace [..]  - <span>March 01, 2016</span></a></li>
+                    </ul>
+                    <div class="random clearfix">
+                        <a class="random" data-toggle="tooltip" data-placement="bottom" title="Random">
+                            <span class="random-article">
+                                <i class="fa fa-random"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row homepage-version">
+            <div class="col-md-9 col-sm-12 col-xs-12 m22">
+                <div class="widget searchwidget">
+                    @foreach (var post in Model)
+                    {
+                        @if (post.Category == "Tech")
+                        {
+                            <div class="large-widget m30">
+                                <div class="post row clearfix">
+                                    <div class="col-md-5">
+                                        <div class="post-media">
+                                            <a href="single.html">
+                                                <img alt="" src="~/BlogTemplate/trendingtemplates.com/demos/techmag/upload/big_news_03.jpg" class="img-responsive">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="title-area">
+                                            <div class="colorfulcats">
+                                                <a href="#"><span class="label label-warning">@post.Category</span></a>
+                                            </div>
+                                            <h3>@post.Title</h3>
+                                            <div class="large-post-meta">
+                                                <span class="avatar"><a href="author.html"><img src="~/BlogTemplate/trendingtemplates.com/demos/techmag/upload/avatar_01.png" alt="" class="img-circle">@post.Author</a></span>
+                                                <small>&#124;</small>
+                                                <span><a href="category.html"><i class="fa fa-clock-o"></i>@post.DateTime.ToShortDateString()</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    }
+
+
+
+                    <br />
+
+                    @{
+                        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                    }
+                    <button asp-action="Index"
+                            asp-route-sortOrder="@ViewData["CurrentSort"]"
+                            asp-route-pageNumber="@(Model.PageIndex - 1)"
+                            asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                            class="btn btn-primary @prevDisabled">
+                        Previous
+                    </button>
+                    <button asp-action="Index"
+                            asp-route-sortOrder="@ViewData["CurrentSort"]"
+                            asp-route-pageNumber="@(Model.PageIndex + 1)"
+                            asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                            class="btn btn-primary @nextDisabled">
+                        Next
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Social Media</h4>
+                        <hr>
+                    </div>
+
+                    <div class="social-media-widget m30">
+                        <ul class="list-social clearfix">
+                            <li class="facebook"><a href="#"><i class="fab fa-facebook"></i> <small>12.042</small></a></li>
+                            <li class="twitter"><a href="#"><i class="fab fa-twitter"></i> <small>67.221</small></a></li>
+                            <li class="googleplus"><a href="#"><i class="fab fa-google-plus"></i> <small>44.213</small></a></li>
+                            <li class="rss"><a href="#"><i class="fab fa-whatsapp"></i> <small>22.551</small></a></li>
+                            <li class="pinterest"><a href="#"><i class="fab fa-pinterest"></i> <small>33.122</small></a></li>
+                            <li class="linkedin"><a href="#"><i class="fab fa-linkedin"></i> <small>55.123</small></a></li>
+                            <li class="youtube"><a href="#"><i class="fab fa-youtube"></i> <small>44.112</small></a></li>
+                            <li class="instagram"><a href="#"><i class="fab fa-instagram"></i> <small>12.441</small></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="widget hidden-xs">
+                    <div class="widget-title">
+                        <h4>Advertising</h4>
+                        <hr>
+                    </div>
+
+                    <div class="ads-widget m30">
+                        <a href="#"><img src="~/BlogTemplate/trendingtemplates.com/demos/techmag/upload/big_news_03.jpg" alt="" class="img-responsive"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/plugins.js"></script>
+
+
+
+@*<section class="blog-posts">
+        <div class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        @foreach (var posts in Model)
+                        {
+                            <article class="post type-post format-standard">
+                                <div class="entry-thumbnail radius"><img src="@posts.GetInLineImgSource()" alt="Post Thumbnail"></div>
+                                <div class="entry-content media">
+                                    <div class="content-details media-body">
+                                        <h3 class="entry-title"><a asp-action="Details" asp-route-id="@posts.Title.Replace(" ","-")">@posts.Title</a></h3>
+                                        <div class="entry-meta">
+                                            <span class="author"><i class="icon-user"></i> <a href="#">@posts.Author</a></span>
+                                            <span class="tag"><i class="icon-tag"></i> <a href="#">@posts.Category</a></span>
+                                            <span><i class="icon-clock"></i> <a href="#">@posts.DateTime.ToShortDateString()</a></span>
+                                        </div>
+                                        <p>@posts.ShortDescription</p>
+                                        <a asp-action="Details" asp-route-id="@posts.Title.Replace(" ","-")" class="btn btn-lg">Read more</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                        }
+
+                        <nav aria-label="Page navigation example">
+
+                        </nav>
+                    </div>
+
+                    <div class="col-md-4">
+                        <aside class="sidebar">
+                            <div class="widget widget_search">
+                                <div class="widget-details">
+                                    <form asp-action="Index" method="get">
+                                        <div class="form-actions no-color">
+                                            <p>
+                                                Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                                                <input type="submit" value="Search" class="btn btn-default" /> |
+                                                <a asp-action="Index">Back to Full List</a>
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="widget widget_categories">
+                                <h2 class="widget-title">Categories</h2>
+                                <div class="widget-details">
+                                    <ul>
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="#">Photography</a></li>
+                                        <li><a href="#">WordPress</a></li>
+                                        <li><a href="#">Learning Press</a></li>
+                                        <li><a href="#">HTML5</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="widget widget_archive">
+                                <h2 class="widget-title">Archive</h2>
+                                <div class="widget-details">
+                                    <ul>
+                                        <li><a href="#">January 2018</a></li>
+                                        <li><a href="#">February 2018</a></li>
+                                        <li><a href="#">March 2018</a></li>
+                                        <li><a href="#">April 2018</a></li>
+                                        <li><a href="#">May 2018</a></li>
+                                        <li><a href="#">June 2018</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+
+
+
+

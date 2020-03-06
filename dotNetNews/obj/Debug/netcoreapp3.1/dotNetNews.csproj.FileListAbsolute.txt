@@ -209,3 +209,5 @@ C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Areas
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Views\dotNetNewsModels\Tech.cshtml.g.cs
+C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Views\dotNetNewsModels\Science.cshtml.g.cs

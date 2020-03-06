@@ -63,6 +63,93 @@ namespace dotNetNews.Controllers
             int pageSize = 3;
             return View(await PaginatedList<dotNetNewsModel>.CreateAsync(students.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
+        public async Task<IActionResult> Tech(string sortOrder, string currentFilter, string searchString, int? pageNumber)
+        {
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
+            var students = from s in _context.dotNetNewsModels
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.Title.Contains(searchString)
+                                       || s.ShortDescription.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.Title);
+                    break;
+                case "Date":
+                    students = students.OrderBy(s => s.DateTime);
+                    break;
+                case "date_desc":
+                    students = students.OrderByDescending(s => s.DateTime);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.Title);
+                    break;
+            }
+
+            int pageSize = 3;
+            return View(await PaginatedList<dotNetNewsModel>.CreateAsync(students.AsNoTracking(), pageNumber ?? 1, pageSize));
+        }
+        public async Task<IActionResult> Science(string sortOrder, string currentFilter, string searchString, int? pageNumber)
+        {
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
+            var students = from s in _context.dotNetNewsModels
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.Title.Contains(searchString)
+                                       || s.ShortDescription.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.Title);
+                    break;
+                case "Date":
+                    students = students.OrderBy(s => s.DateTime);
+                    break;
+                case "date_desc":
+                    students = students.OrderByDescending(s => s.DateTime);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.Title);
+                    break;
+            }
+
+            int pageSize = 3;
+            return View(await PaginatedList<dotNetNewsModel>.CreateAsync(students.AsNoTracking(), pageNumber ?? 1, pageSize));
+        }
+
 
         // GET: dotNetNewsModels/Details/5
         public async Task<IActionResult> Details(string id)
