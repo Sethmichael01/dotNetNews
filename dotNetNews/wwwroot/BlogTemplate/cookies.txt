@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+trendingtemplates.com	TRUE	/	FALSE	1999999999	PHPSESSID	ikdifa3ec7m70v3apll03p0410
+trendingtemplates.com	TRUE	/	FALSE	1999999999	dwqa_anonymous	k6debtGAqPSt9Z1bXOfCMJUSrpgXFy3Jvz3cxQ6pEms
+www.trendingtemplates.com	TRUE	/	FALSE	1999999999	sh_form_builder_hash	form_builder_5e161f09da1f4
+trendingtemplates.com	TRUE	/	FALSE	1999999999	sh_form_builder_hash	form_builder_5e161f13009c9
+
