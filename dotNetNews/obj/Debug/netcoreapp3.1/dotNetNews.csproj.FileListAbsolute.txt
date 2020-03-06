@@ -214,3 +214,4 @@ C:\Users\sethm\Desktop\dotNetNews\dotNetNews\bin\Debug\netcoreapp3.1\Microsoft.A
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\bin\Debug\netcoreapp3.1\SendGrid.dll
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\dotNetNews.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\dotNetNews.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sethm\Desktop\dotNetNews\dotNetNews\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutAcc.cshtml.g.cs
