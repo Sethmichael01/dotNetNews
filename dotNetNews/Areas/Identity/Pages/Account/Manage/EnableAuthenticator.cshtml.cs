@@ -148,7 +148,7 @@ namespace dotNetNews.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("dotNetNews"),
+                _urlEncoder.Encode("Razor Pages"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }
