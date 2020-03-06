@@ -116,55 +116,9 @@
                                 <li>
                                     <a style="font-size:large" class="nav-link" aria-haspopup="true" asp-area="" asp-controller="dotNetNewsModels" asp-action="Science" aria-expanded="false">Science</a>
                                 </li>
-                                <li class="dropdown hasmenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
-                                    <ul class="dropdown-menu">
-                                        @if (SignInManager.IsSignedIn(User))
-                                        {
-                                            <li class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                @*<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics <span class="fa fa-angle-down"></span></a>*@
-                                                <ul class="dropdown-menu">
-
-                                                    <li>
-                                                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
-                                                    </li>
-                                                    <li>
-                                                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                                            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-                                                        </form>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                        }
-                                        else
-                                        {
-                                            <li class="dropdown hasmenu">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics <span class="fa fa-angle-down"></span></a>
-                                                <ul class="dropdown-menu">
-
-                                                    <li>
-                                                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        }
-                                        @*<li><a href="reviews.html">Item Reviews</a></li>
-                                        <li><a href="jobs.html">Career & Jobs</a></li>
-                                        <li><a href="category.html">Technology</a></li>
-                                        <li><a href="category.html">Gadgets</a></li>
-                                        <li><a href="category.html">Software</a></li>
-                                        <li><a href="category.html">Development</a></li>
-                                        <li><a href="category.html">WordPress</a></li>
-                                        <li><a href="category.html">Icons & Fonts</a></li>*@
-                                    </ul>
-                                </li>
-                                @*<li>
+                                <li>
                                     <partial name="_LoginPartial" />
-                                </li>*@
+                                </li>
                                 @if (SignInManager.IsSignedIn(User) && @User.Identity.Name == "sethmichael1.sm@gmail.com")
                                 {
                                     <li>
