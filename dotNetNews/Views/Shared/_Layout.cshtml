@@ -119,12 +119,6 @@
                                 <li>
                                     <partial name="_LoginPartial" />
                                 </li>
-                                @if (SignInManager.IsSignedIn(User) && @User.Identity.Name == "sethmichael1.sm@gmail.com")
-                                {
-                                    <li>
-                                        <a class="nav-link" aria-haspopup="true" asp-area="" asp-controller="dotNetNewsModel" asp-action="Create">Create New Post</a>
-                                    </li>
-                                }
                             </ul>
                         </div>
                         <ul class="nav navbar-nav navbar-right searchandbag">

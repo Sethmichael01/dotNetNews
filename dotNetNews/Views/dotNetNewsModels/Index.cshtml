@@ -64,7 +64,7 @@
                                         <div class="colorfulcats">
                                             <a href="#"><span class="label label-warning">@post.Category</span></a>
                                         </div>
-                                        <h3>@post.Title</h3>
+                                        <h3><a asp-route-id="@post.Title.Replace(" ","-")" asp-action="Details">@post.Title</a> </h3>
                                         <div class="large-post-meta">
                                             <span class="avatar"><a><img src="~/BlogTemplate/trendingtemplates.com/demos/techmag/upload/avatar_01.png" alt="" class="img-circle">@post.Author</a></span>
                                             <small>&#124;</small>
